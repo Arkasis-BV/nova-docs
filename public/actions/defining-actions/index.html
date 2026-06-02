@@ -1,0 +1,2744 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../support/">
+      
+      
+        <link rel="next" href="../registering-actions/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Defining Actions - Nova 3 docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#defining-actions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Nova 3 docs" class="md-header__button md-logo" aria-label="Nova 3 docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nova 3 docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Defining Actions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Arkasis-BV/nova-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Arkasis-BV/nova-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Nova 3 docs" class="md-nav__button md-logo" aria-label="Nova 3 docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nova 3 docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Arkasis-BV/nova-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Arkasis-BV/nova-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-of-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code of Conduct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support &amp; Bug Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Actions
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-multiple-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Multiple Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destructive-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Destructive Actions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Fields
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Action Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#action-fields-default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Fields Default Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Titles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Responses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Action Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirect-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirect Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queued-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queued Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Queued Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-connection-and-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing The Connection And Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Action Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disabling-the-action-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling The Action Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queued-action-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queued Action Statuses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-modal-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Modal Customization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-action-confirmation-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Action Confirmation Buttons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-response-modals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Response Modals
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../registering-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registering Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customization
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Customization
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS / JavaScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/resource-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resource Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/stubs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stubs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dashboard
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Filters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filters/defining-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filters/registering-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registering Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lenses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lenses/defining-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lenses/registering-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registering Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Metrics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics/defining-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics/registering-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registering Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nova js
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Nova js
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nova-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nova-js/event-bus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nova-js/methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nova-js/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/date-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/file-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../resources/validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Search
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/scout-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scout Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#handling-multiple-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Handling Multiple Results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#destructive-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Destructive Actions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Fields
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Action Fields">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#action-fields-default-values" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Fields Default Values
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Titles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Responses
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Action Responses">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#redirect-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Redirect Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#download-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#queued-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queued Actions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Queued Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-connection-and-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing The Connection And Queue
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Action Log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disabling-the-action-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling The Action Log
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queued-action-statuses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queued Action Statuses
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-modal-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Modal Customization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customizing-action-confirmation-buttons" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Action Confirmation Buttons
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-response-modals" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Action Response Modals
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="defining-actions">Defining Actions</h1>
+<p>Nova actions allow you to perform custom tasks on one or more Eloquent models. For example, you might write an action that sends an email to a user containing account data they have requested. Or, you might write an action to transfer a group of records to another user.</p>
+<p>Once an action has been attached to a resource definition, you may initiate it from the resource's index or detail pages:</p>
+<p><img alt="Action" src="../img/action.png" /></p>
+<p>If an action is enabled for display on the resource's table row, you may initiate it from the resource's action dropdown menu. These are called "Inline Actions":</p>
+<p><img alt="Inline Action" src="../img/inline-actions.png" /></p>
+<h2 id="overview">Overview</h2>
+<p>Nova actions may be generated using the <code>nova:action</code> Artisan command. By default, all actions are placed in the <code>app/Nova/Actions</code> directory:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>nova:action<span class="w"> </span>EmailAccountProfile
+</code></pre></div>
+<p>You may generate a <a href="#destructive-actions">destructive action</a> by passing the <code>--destructive</code> option:</p>
+<div class="highlight"><pre><span></span><code>php<span class="w"> </span>artisan<span class="w"> </span>nova:action<span class="w"> </span>DeleteUserData<span class="w"> </span>--destructive
+</code></pre></div>
+<p>To learn how to define Nova actions, let's look at an example. In this example, we'll define an action that sends an email message to a user or group of users:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Nova\Actions</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">App\Models\AccountData</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Bus\Queueable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Laravel\Nova\Actions\Action</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Collection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Laravel\Nova\Fields\ActionFields</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Queue\InteractsWithQueue</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Contracts\Queue\ShouldQueue</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">EmailAccountProfile</span> <span class="k">extends</span> <span class="nx">Action</span>
+<span class="p">{</span>
+  <span class="k">use</span> <span class="nx">InteractsWithQueue</span><span class="p">,</span> <span class="nx">Queueable</span><span class="p">;</span>
+
+  <span class="sd">/**</span>
+<span class="sd">   * Perform the action on the given models.</span>
+<span class="sd">   *</span>
+<span class="sd">   * @param  \Laravel\Nova\Fields\ActionFields  $fields</span>
+<span class="sd">   * @param  \Illuminate\Support\Collection  $models</span>
+<span class="sd">   * @return mixed</span>
+<span class="sd">   */</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nx">ActionFields</span> <span class="nv">$fields</span><span class="p">,</span> <span class="nx">Collection</span> <span class="nv">$models</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$models</span> <span class="k">as</span> <span class="nv">$model</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">(</span><span class="k">new</span> <span class="nx">AccountData</span><span class="p">(</span><span class="nv">$model</span><span class="p">))</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">();</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="sd">/**</span>
+<span class="sd">   * Get the fields available on the action.</span>
+<span class="sd">   *</span>
+<span class="sd">   * @return array</span>
+<span class="sd">   */</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">fields</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[];</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The most important method of an action is the <code>handle</code> method. The <code>handle</code> method receives the values for any fields attached to the action, as well as a collection of selected models. The <code>handle</code> method <strong>always</strong> receives a <code>Collection</code> of models, even if the action is only being performed against a single model.</p>
+<p>Within the <code>handle</code> method, you may perform whatever tasks are necessary to complete the action. You are free to update database records, send emails, call other services, etc. The sky is the limit!</p>
+<h2 id="handling-multiple-results">Handling Multiple Results</h2>
+<p>When running an action on multiple resources, you may wish to use all of the results of the action to perform additional tasks. For instance, you may wish to generate a report detailing all of the changes for the group of selected resources. To accomplish this, you may use the <code>handleResult</code> method of the action:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Handle chunk results.</span>
+<span class="x"> *</span>
+<span class="x"> * @param  \Laravel\Nova\Fields\ActionFields  $fields</span>
+<span class="x"> * @param  array  $results</span>
+<span class="x"> *</span>
+<span class="x"> * @return mixed</span>
+<span class="x"> */</span>
+<span class="x">public function handleResult(ActionFields $fields, $results)</span>
+<span class="x">{</span>
+<span class="x">    $models = collect($results)-&gt;flatten();</span>
+
+<span class="x">    dispatch(new GenerateReport($models));</span>
+
+<span class="x">    return Action::message($models-&gt;count());</span>
+<span class="x">}</span>
+</code></pre></div>
+<h2 id="destructive-actions">Destructive Actions</h2>
+<p>You may designate an action as destructive or dangerous by having your action class inherit from <code>Laravel\Nova\Actions\DestructiveAction</code>. This will change the color of the action's confirm button to red:</p>
+<p><img alt="Destructive Action" src="../img/action-destructive.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Destructive Actions &amp; Policies</p>
+<p>When a destructive action is added to a resource that has an associated authorization policy, the policy's <code>delete</code> method must return <code>true</code> in order for the action to run.</p>
+</div>
+<h2 id="action-fields">Action Fields</h2>
+<p>Sometimes you may wish to gather additional information from the user before dispatching an action. For this reason, Nova allows you to attach most of Nova's supported <a href="../../resources/fields/">fields</a> directly to an action. When the action is initiated, Nova will prompt the user to provide input for the fields:</p>
+<p><img alt="Action Field" src="../img/action-field.png" /></p>
+<p>To add a field to an action, add the field to the array of fields returned by the action's <code>fields</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Laravel\Nova\Fields\Text;</span>
+
+<span class="x">/**</span>
+<span class="x"> * Get the fields available on the action.</span>
+<span class="x"> *</span>
+<span class="x"> * @return array</span>
+<span class="x"> */</span>
+<span class="x">public function fields()</span>
+<span class="x">{</span>
+<span class="x">    return [</span>
+<span class="x">        Text::make(&#39;Subject&#39;),</span>
+<span class="x">    ];</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>Finally, within your action's <code>handle</code> method, you may access your fields using dynamic accessors on the provided <code>ActionFields</code> instance:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Perform the action on the given models.</span>
+<span class="x"> *</span>
+<span class="x"> * @param  \Laravel\Nova\Fields\ActionFields  $fields</span>
+<span class="x"> * @param  \Illuminate\Support\Collection  $models</span>
+<span class="x"> * @return mixed</span>
+<span class="x"> */</span>
+<span class="x">public function handle(ActionFields $fields, Collection $models)</span>
+<span class="x">{</span>
+<span class="x">    foreach ($models as $model) {</span>
+<span class="x">        (new AccountData($model))-&gt;send($fields-&gt;subject);</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3 id="action-fields-default-values">Action Fields Default Values</h3>
+<p>You may use the <code>default</code> method to set the default value for an action field:</p>
+<div class="highlight"><pre><span></span><code><span class="x">Text::make(&#39;Subject&#39;)-&gt;default(function ($request) {</span>
+<span class="x">    return &#39;Test: Subject&#39;;</span>
+<span class="x">}),</span>
+</code></pre></div>
+<h2 id="action-titles">Action Titles</h2>
+<p>If you would like to change the action title that is displayed in Nova's action selection menu, you may define a <code>name</code> property on the action class:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * The displayable name of the action.</span>
+<span class="x"> *</span>
+<span class="x"> * @var string</span>
+<span class="x"> */</span>
+<span class="x">public $name = &#39;Action Title&#39;;</span>
+</code></pre></div>
+<h2 id="action-responses">Action Responses</h2>
+<p>Typically, when an action is executed, a generic "success" messages is displayed in the Nova UI. However, you are free to customize this response using a variety of methods on the <code>Action</code> class.</p>
+<p>To display a custom "success" message, you may return the result of the <code>Action::message</code> method from your <code>handle</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Perform the action on the given models.</span>
+<span class="x"> *</span>
+<span class="x"> * @param  \Laravel\Nova\Fields\ActionFields  $fields</span>
+<span class="x"> * @param  \Illuminate\Support\Collection  $models</span>
+<span class="x"> * @return mixed</span>
+<span class="x"> */</span>
+<span class="x">public function handle(ActionFields $fields, Collection $models)</span>
+<span class="x">{</span>
+<span class="x">    // ...</span>
+
+<span class="x">    return Action::message(&#39;It worked!&#39;);</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>To return a red, "danger" message, you may use the <code>Action::danger</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">return Action::danger(&#39;Something went wrong!&#39;);</span>
+</code></pre></div>
+<h4 id="redirect-responses">Redirect Responses</h4>
+<p>To redirect the user to an entirely new location after the action is executed, you may use the <code>Action::redirect</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">return Action::redirect(&#39;https://example.com&#39;);</span>
+</code></pre></div>
+<p>To redirect the user to an internal route, you may use the <code>Action::push</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">return Action::push(&#39;/resources/posts/new&#39;, [</span>
+<span class="x">  &#39;viaResource&#39; =&gt; &#39;users&#39;,</span>
+<span class="x">  &#39;viaResourceId&#39; =&gt; 1,</span>
+<span class="x">  &#39;viaRelationship&#39; =&gt; &#39;posts&#39;</span>
+<span class="x">]);</span>
+</code></pre></div>
+<p>To redirect the user to a new location in a new tab, you may use the <code>Action::openInNewTab</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">return Action::openInNewTab(&#39;https://example.com&#39;);</span>
+</code></pre></div>
+<h4 id="download-responses">Download Responses</h4>
+<p>To initiate a file download after the action is executed, you may use the <code>Action::download</code> method. The <code>download</code> method accepts the URL of the file to be downloaded as its first argument, and the desired name of the file as its second argument:</p>
+<div class="highlight"><pre><span></span><code><span class="x">return Action::download(&#39;https://example.com/invoice.pdf&#39;, &#39;Invoice.pdf&#39;);</span>
+</code></pre></div>
+<h2 id="queued-actions">Queued Actions</h2>
+<p>Occasionally, you may have actions that take a while to finish running. For this reason, Nova makes it a cinch to <a href="https://laravel.com/docs/queues">queue</a> your actions. To instruct Nova to queue an action instead of running it synchronously, mark the action with the <code>ShouldQueue</code> interface:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Nova\Actions</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">App\AccountData</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Bus\Queueable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Laravel\Nova\Actions\Action</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Collection</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Laravel\Nova\Fields\ActionFields</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Queue\InteractsWithQueue</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Contracts\Queue\ShouldQueue</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">EmailAccountProfile</span> <span class="k">extends</span> <span class="nx">Action</span> <span class="k">implements</span> <span class="nx">ShouldQueue</span>
+<span class="p">{</span>
+  <span class="k">use</span> <span class="nx">InteractsWithQueue</span><span class="p">,</span> <span class="nx">Queueable</span><span class="p">;</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>When using queued actions, don't forget to configure and start queue workers for your application. Otherwise, your actions won't be processed.</p>
+<div class="admonition danger">
+<p class="admonition-title">Queued Action Files</p>
+<p>At this time, Nova does not support attaching <code>File</code> fields to a queued action. If you need to attach a <code>File</code> field to an action, the action must be run synchronously.</p>
+</div>
+<h4 id="customizing-the-connection-and-queue">Customizing The Connection And Queue</h4>
+<p>You may customize the queue connection and queue name that the action is queued on by setting the <code>$connection</code> and <code>$queue</code> properties within the action's constructor:</p>
+<div class="highlight"><pre><span></span><code><span class="x">class EmailAccountProfile extends Action implements ShouldQueue</span>
+<span class="x">{</span>
+<span class="x">  use InteractsWithQueue, Queueable;</span>
+
+<span class="x">  public function __construct()</span>
+<span class="x">  {</span>
+<span class="x">      $this-&gt;connection = &#39;redis&#39;;</span>
+<span class="x">      $this-&gt;queue = &#39;emails&#39;;</span>
+<span class="x">  }</span>
+<span class="x">}</span>
+</code></pre></div>
+<h2 id="action-log">Action Log</h2>
+<p>It is often useful to view a log of the actions that have been run against a resource. Additionally, when queueing actions, it's often important to know when they are actually finished. Thankfully, Nova makes it a breeze to add an action log to a resource by attaching the <code>Laravel\Nova\Actions\Actionable</code> trait to the resource's corresponding Eloquent model.</p>
+<p>For example, we may attach the <code>Laravel\Nova\Actions\Actionable</code> trait to the <code>User</code> Eloquent model:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Laravel\Nova\Actions\Actionable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Notifications\Notifiable</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Foundation\Auth\User</span> <span class="k">as</span> <span class="nx">Authenticatable</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">User</span> <span class="k">extends</span> <span class="nx">Authenticatable</span>
+<span class="p">{</span>
+  <span class="k">use</span> <span class="nx">Actionable</span><span class="p">,</span> <span class="nx">Notifiable</span><span class="p">;</span>
+
+  <span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Once the trait has been attached to the model, Nova will automatically begin displaying an action log at the bottom of the resource's detail page:</p>
+<p><img alt="Action Log" src="../img/action-log.png" /></p>
+<h3 id="disabling-the-action-log">Disabling The Action Log</h3>
+<p>If you do not want to record an action in the action log, you may disable this behavior by adding a <code>withoutActionEvents</code> property on your action class:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Disables action log events for this action.</span>
+<span class="x"> *</span>
+<span class="x"> * @var bool</span>
+<span class="x"> */</span>
+<span class="x">public $withoutActionEvents = true;</span>
+</code></pre></div>
+<p>Or, using the <code>withoutActionEvents</code> method, you may disable the action log for an action when the action is attached to a resource:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Get the actions available for the resource.</span>
+<span class="x"> *</span>
+<span class="x"> * @param  \Illuminate\Http\Request  $request</span>
+<span class="x"> * @return array</span>
+<span class="x"> */</span>
+<span class="x">public function actions(Request $request)</span>
+<span class="x">{</span>
+<span class="x">    return [</span>
+<span class="x">        (new SomeAction)-&gt;withoutActionEvents()</span>
+<span class="x">    ];</span>
+<span class="x">}</span>
+</code></pre></div>
+<h3 id="queued-action-statuses">Queued Action Statuses</h3>
+<p>While a queued action is running, you may update the action's "status" for any of the models that were passed to the action via its model collection. For example, you may use the action's <code>markAsFinished</code> method to indicate that the action has completed processing a particular model:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Perform the action on the given models.</span>
+<span class="x"> *</span>
+<span class="x"> * @param  \Laravel\Nova\Fields\ActionFields  $fields</span>
+<span class="x"> * @param  \Illuminate\Support\Collection  $models</span>
+<span class="x"> * @return mixed</span>
+<span class="x"> */</span>
+<span class="x">public function handle(ActionFields $fields, Collection $models)</span>
+<span class="x">{</span>
+<span class="x">    foreach ($models as $model) {</span>
+<span class="x">        (new AccountData($model))-&gt;send($fields-&gt;subject);</span>
+
+<span class="x">        $this-&gt;markAsFinished($model);</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>Or, if you would like to indicate that an action has "failed" for a given model, you may use the <code>markAsFailed</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Perform the action on the given models.</span>
+<span class="x"> *</span>
+<span class="x"> * @param  \Laravel\Nova\Fields\ActionFields  $fields</span>
+<span class="x"> * @param  \Illuminate\Support\Collection  $models</span>
+<span class="x"> * @return mixed</span>
+<span class="x"> */</span>
+<span class="x">public function handle(ActionFields $fields, Collection $models)</span>
+<span class="x">{</span>
+<span class="x">    foreach ($models as $model) {</span>
+<span class="x">        try {</span>
+<span class="x">            (new AccountData($model))-&gt;send($fields-&gt;subject);</span>
+<span class="x">        } catch (Exception $e) {</span>
+<span class="x">            $this-&gt;markAsFailed($model, $e);</span>
+<span class="x">        }</span>
+<span class="x">    }</span>
+<span class="x">}</span>
+</code></pre></div>
+<h2 id="action-modal-customization">Action Modal Customization</h2>
+<p>By default, actions will ask the user for confirmation before running. You can customize the confirmation message, confirm button, and cancel button to give the user more context before running the action. This is done by calling the <code>confirmText</code>, <code>confirmButtonText</code>, and <code>cancelButtonText</code> methods when defining the action:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Get the actions available for the resource.</span>
+<span class="x"> *</span>
+<span class="x"> * @param  \Illuminate\Http\Request  $request</span>
+<span class="x"> * @return array</span>
+<span class="x"> */</span>
+<span class="x">public function actions(Request $request)</span>
+<span class="x">{</span>
+<span class="x">    return [</span>
+<span class="x">        (new Actions\ActivateUser)</span>
+<span class="x">            -&gt;confirmText(&#39;Are you sure you want to activate this user?&#39;)</span>
+<span class="x">            -&gt;confirmButtonText(&#39;Activate&#39;)</span>
+<span class="x">            -&gt;cancelButtonText(&quot;Don&#39;t activate&quot;),</span>
+<span class="x">    ];</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>This will customize the modal using your provided text:</p>
+<p><img alt="Action Customization" src="../img/action-customization.png" /></p>
+<h2 id="customizing-action-confirmation-buttons">Customizing Action Confirmation Buttons</h2>
+<p>You may wish to present the user with a different color scheme than the default "primary" and "destructive" styling for the action depending on its type. You may customize the CSS classes used for the confirmation buttons by overriding the <code>actionClass</code> method on the <code>Action</code> class:</p>
+<div class="highlight"><pre><span></span><code><span class="x">/**</span>
+<span class="x"> * Return the CSS classes for the Action.</span>
+<span class="x"> *</span>
+<span class="x"> * @return string</span>
+<span class="x"> */</span>
+<span class="x">public function actionClass()</span>
+<span class="x">{</span>
+<span class="x">    return &#39;bg-success text-white&#39;;</span>
+<span class="x">}</span>
+</code></pre></div>
+<h2 id="action-response-modals">Action Response Modals</h2>
+<p>In addition to the customization options provided before and during an action runs, Nova also supports the ability to present a custom modal response to the user. This allows you to provide additional context or follow-up actions to the user, customized to your use-case.</p>
+<p>For example, let's say you had an action named <code>GenerateApiToken</code>, which creates unique tokens for use with a REST API. Using a custom action response modal, you could show the user running the action a modal allowing them to copy the newly-generated API token to their clipboard.</p>
+<p>Using the <code>nova:asset</code> Artisan command, you would generate a new asset and register the custom modal with Nova's Vue instance:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">ApiTokenCopier</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;./components/ApiTokenCopier&#39;</span>
+
+<span class="nx">Nova</span><span class="p">.</span><span class="nx">booting</span><span class="p">(</span><span class="nx">Vue</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">Vue</span><span class="p">.</span><span class="nx">component</span><span class="p">(</span><span class="s1">&#39;api-token-copier&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">ApiTokenCopier</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>You would then use the <code>modal</code> method inside your Action's <code>handle</code> method, which would instruct Nova to show the modal after running the action, passing the Vue component's name and any extra data to the component:</p>
+<div class="highlight"><pre><span></span><code><span class="x">public function handle(ActionFields $fields, Collection $models)</span>
+<span class="x">{</span>
+<span class="x">    if ($models-&gt;count() &gt; 1) {</span>
+<span class="x">        return Action::danger(&#39;Please run this on only one user resource.&#39;);</span>
+<span class="x">    }</span>
+
+<span class="x">    $models-&gt;first()-&gt;update([&#39;api_token&#39; =&gt; $token = Str::random(32)]);</span>
+
+<span class="x">    return Action::modal(&#39;api-token-copier&#39;, [</span>
+<span class="x">        &#39;message&#39; =&gt; &#39;The API token was generated!&#39;,</span>
+<span class="x">        &#39;token&#39; =&gt; $token,</span>
+<span class="x">    ]);</span>
+<span class="x">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

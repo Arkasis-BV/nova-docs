@@ -1,0 +1,2757 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../fields/">
+      
+      
+        <link rel="next" href="../relationships/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>File Fields - Nova 3 docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-fields" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Nova 3 docs" class="md-header__button md-logo" aria-label="Nova 3 docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Nova 3 docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File Fields
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Arkasis-BV/nova-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Arkasis-BV/nova-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Nova 3 docs" class="md-nav__button md-logo" aria-label="Nova 3 docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Nova 3 docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Arkasis-BV/nova-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Arkasis-BV/nova-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../code-of-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code of Conduct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Support &amp; Bug Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Actions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actions/defining-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../actions/registering-actions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registering Actions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customization
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Customization
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/assets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/cards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/dashboards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSS / JavaScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/localization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/resource-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resource Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/stubs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stubs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/themes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Themes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../customization/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dashboard
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dashboard
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dashboard/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Filters
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Filters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filters/defining-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../filters/registering-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registering Filters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lenses
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Lenses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lenses/defining-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lenses/registering-lenses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registering Lenses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Metrics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Metrics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics/defining-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics/registering-metrics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Registering Metrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nova js
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Nova js
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nova-js/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nova-js/event-bus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Event Bus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nova-js/methods/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methods
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nova-js/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Properties
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Resources
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../date-fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Fields
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Fields
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-the-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining The Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-file-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling File Downloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-files-are-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Files Are Stored
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avatars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avatars
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storing-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storing Metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pruning-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pruning &amp; Deletion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-file-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing File Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing File Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-name-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing The Name / Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-entire-storage-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing The Entire Storage Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invokables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invokables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-file-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing File Deletion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing File Deletion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invokables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invokables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-previews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Previews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-thumbnails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Thumbnails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Downloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-accepted-file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Accepted File Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../relationships/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Relationships
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../validation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Validation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Search
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Search
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/global-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Global Search
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../search/scout-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scout Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defining-the-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining The Field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disabling-file-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling File Downloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-files-are-stored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Files Are Stored
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Images
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avatars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Avatars
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storing-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Storing Metadata
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pruning-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pruning &amp; Deletion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-file-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing File Storage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing File Storage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-name-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing The Name / Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-the-entire-storage-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing The Entire Storage Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#invokables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invokables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-file-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing File Deletion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customizing File Deletion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#invokables_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Invokables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-previews" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Previews
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-thumbnails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Thumbnails
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Downloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customizing-accepted-file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customizing Accepted File Types
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="file-fields">File Fields</h1>
+<p>Nova offers several types of file fields: <code>File</code>, <code>Image</code>, <code>Avatar</code>, <code>VaporFile</code>, and <code>VaporImage</code>. The <code>File</code> field is the most basic form of file upload field, and is the base class for both the <code>Image</code> and <code>Avatar</code> field classes. In the following documentation, we will explore each of these fields and discuss their similarities and differences.</p>
+<h2 id="overview">Overview</h2>
+<p>To illustrate the behavior of Nova file upload fields, let's assume our application's users can upload "profile photos" to their account. So, our <code>users</code> database table will have a <code>profile_photo</code> column. This column will contain the path to the profile on disk, or, when using a cloud storage provider such as Amazon S3, the profile photo's path within its "bucket".</p>
+<h3 id="defining-the-field">Defining The Field</h3>
+<p>Next, let's attach the file field to our <code>User</code> resource. In this example, we will create the field and instruct it to store the underlying file on the <code>public</code> disk. This disk name should correspond to a disk name in your <code>filesystems</code> configuration file:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Laravel\Nova\Fields\File;</span>
+
+<span class="x">File::make(&#39;Profile Photo&#39;)-&gt;disk(&#39;public&#39;),</span>
+</code></pre></div>
+<h3 id="disabling-file-downloads">Disabling File Downloads</h3>
+<p>By default, the <code>File</code> field allows the user to download the linked file. To disable this, you can call the <code>disableDownload</code> method on the field definition:</p>
+<div class="highlight"><pre><span></span><code><span class="x">File::make(&#39;Profile Photo&#39;)-&gt;disableDownload(),</span>
+</code></pre></div>
+<h3 id="how-files-are-stored">How Files Are Stored</h3>
+<p>When a file is uploaded using this field, Nova will use Laravel's <a href="https://laravel.com/docs/filesystem">Flysystem integration</a> to store the file on the disk of your choosing with a randomly generated filename. Once the file is stored, Nova will store the relative path to the file in the file field's underlying database column.</p>
+<p>To illustrate the default behavior of the <code>File</code> field, let's take a look at an equivalent route that would store the file in the same way:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Http\Request;</span>
+
+<span class="x">Route::post(&#39;/photo&#39;, function (Request $request) {</span>
+<span class="x">    $path = $request-&gt;profile_photo-&gt;store(&#39;/&#39;, &#39;public&#39;);</span>
+
+<span class="x">    $request-&gt;user()-&gt;update([</span>
+<span class="x">        &#39;profile_photo&#39; =&gt; $path,</span>
+<span class="x">    ]);</span>
+<span class="x">});</span>
+</code></pre></div>
+<p>Of course, once the file has been stored, you may retrieve it within your application using the Laravel <code>Storage</code> facade:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Support\Facades\Storage;</span>
+
+<span class="x">Storage::get($user-&gt;profile_photo);</span>
+
+<span class="x">Storage::url($user-&gt;profile_photo);</span>
+</code></pre></div>
+<p>If you are using the <code>public</code> disk with the <code>local</code> driver, you should run the <code>php artisan storage:link</code> Artisan command to create a symbolic link from <code>public/storage</code> to <code>storage/app/public</code>. To learn more about file storage in Laravel, check out the <a href="https://laravel.com/docs/filesystem">Laravel file storage documentation</a>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Customization</p>
+<p>The documentation above only demonstrates the default behavior of the <code>File</code> field. To learn more about how to customize its behavior, check out the <a href="#customization">customization documentation</a>.</p>
+</div>
+<h2 id="images">Images</h2>
+<p>The <code>Image</code> field behaves exactly like the <code>File</code> field; however, instead of only displaying the path to the file within the Nova dashboard, an <code>Image</code> field will show a thumbnail preview of the underlying file. All of the configuration and customization options of the <code>Image</code> field mirror that of the <code>File</code> field:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Laravel\Nova\Fields\Image;</span>
+
+<span class="x">Image::make(&#39;Profile Photo&#39;)-&gt;disk(&#39;public&#39;),</span>
+</code></pre></div>
+<p>To set the width of the <code>Image</code> field when being displayed, you can use the <code>maxWidth</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">Image::make(&#39;Profile Photo&#39;)-&gt;maxWidth(100),</span>
+</code></pre></div>
+<p>You can also use the <code>maxWidth</code> method on the <a href="#avatars">Avatar</a> field.</p>
+<h2 id="avatars">Avatars</h2>
+<p>The <code>Avatar</code> field behaves exactly like the <code>File</code> field; however, instead of only displaying the path to the file within the Nova dashboard, an <code>Avatar</code> field will show a thumbnail preview of the underlying file. All of the configuration and customization options of the <code>Avatar</code> field mirror that of the <code>File</code> field:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Laravel\Nova\Fields\Avatar;</span>
+
+<span class="x">Avatar::make(&#39;Poster&#39;)-&gt;disk(&#39;public&#39;),</span>
+</code></pre></div>
+<p>In addition to displaying a thumbnail preview of the underlying file, an <code>Avatar</code> field will also be automatically displayed in Nova search results. An <code>Avatar</code> field is not limited to "user" resources - you may attach <code>Avatar</code> fields to any resource within your Nova application:</p>
+<p><img alt="Avatar Example" src="../img/avatar-poster.png" /></p>
+<h2 id="storing-metadata">Storing Metadata</h2>
+<p>In addition to storing the path to the file within the storage system, you may also instruct Nova to store the original client filename and its size (in bytes). You may accomplish this using the <code>storeOriginalName</code> and <code>storeSize</code> methods. Each of these methods accept the name of the column you would like to store the file information:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Http\Request;</span>
+<span class="x">use Laravel\Nova\Fields\File;</span>
+<span class="x">use Laravel\Nova\Fields\Text;</span>
+
+<span class="x">/**</span>
+<span class="x"> * Get the fields displayed by the resource.</span>
+<span class="x"> *</span>
+<span class="x"> * @param  \Illuminate\Http\Request  $request</span>
+<span class="x"> * @return array</span>
+<span class="x"> */</span>
+<span class="x">public function fields(Request $request)</span>
+<span class="x">{</span>
+<span class="x">    return [</span>
+<span class="x">        // ...</span>
+
+<span class="x">        File::make(&#39;Attachment&#39;)</span>
+<span class="x">                -&gt;disk(&#39;s3&#39;)</span>
+<span class="x">                -&gt;storeOriginalName(&#39;attachment_name&#39;)</span>
+<span class="x">                -&gt;storeSize(&#39;attachment_size&#39;),</span>
+
+<span class="x">        Text::make(&#39;Attachment Name&#39;)-&gt;exceptOnForms(),</span>
+
+<span class="x">        Text::make(&#39;Attachment Size&#39;)</span>
+<span class="x">                -&gt;exceptOnForms()</span>
+<span class="x">                -&gt;displayUsing(function ($value) {</span>
+<span class="x">                    return number_format($value / 1024, 2).&#39;kb&#39;;</span>
+<span class="x">                }),</span>
+<span class="x">    ];</span>
+<span class="x">}</span>
+</code></pre></div>
+<p>One benefit of storing the original client filename is the ability to create file download responses using the original filename that was used to upload the file. For example, you may do something like the following in one of your application's routes:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Support\Facades\Storage;</span>
+
+<span class="x">Route::get(&#39;/download&#39;, function () {</span>
+<span class="x">    $user = $request-&gt;user();</span>
+
+<span class="x">    return Storage::download(</span>
+<span class="x">        $user-&gt;attachment, $user-&gt;attachment_name</span>
+<span class="x">    );</span>
+<span class="x">});</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">File Downloads</p>
+<p>When using the <code>storeOriginalName</code> method, the file field's "Download" link within the Nova dashboard will automatically download the file using its original name.</p>
+</div>
+<h2 id="pruning-deletion">Pruning &amp; Deletion</h2>
+<p>File fields are deletable by default, but you can override this behavior by using the <code>deletable</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">File::make(&#39;Photo&#39;)-&gt;disk(&#39;public&#39;)-&gt;deletable(false),</span>
+</code></pre></div>
+<p>The <code>File</code> field, as well as the <code>Image</code> and <code>Avatar</code> fields, may be marked as <code>prunable</code>. The <code>prunable</code> method will instruct Nova to delete the underlying file from storage when the associated model is deleted from the database:</p>
+<div class="highlight"><pre><span></span><code><span class="x">File::make(&#39;Profile Photo&#39;)-&gt;disk(&#39;public&#39;)-&gt;prunable(),</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Non-Nova Deletes</p>
+<p>Nova will only automatically prune files for model deletes that are initiated within Nova. Other portions of your application may need to implement their own file deletion logic.</p>
+</div>
+<h2 id="customization">Customization</h2>
+<h3 id="customizing-file-storage">Customizing File Storage</h3>
+<p>Previously we learned that, by default, Nova stores the file using the <code>store</code> method of the <code>Illuminate\Http\UploadedFile</code> class. However, you may fully customize this behavior based on your application's needs.</p>
+<h4 id="customizing-the-name-path">Customizing The Name / Path</h4>
+<p>If you only need to customize the name or path of the stored file on disk, you may use the <code>path</code> and <code>storeAs</code> methods of the <code>File</code> field:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Http\Request;</span>
+
+<span class="x">File::make(&#39;Attachment&#39;)</span>
+<span class="x">    -&gt;disk(&#39;s3&#39;)</span>
+<span class="x">    -&gt;path($request-&gt;user()-&gt;id.&#39;-attachments&#39;)</span>
+<span class="x">    -&gt;storeAs(function (Request $request) {</span>
+<span class="x">        return sha1($request-&gt;attachment-&gt;getClientOriginalName());</span>
+<span class="x">    }),</span>
+</code></pre></div>
+<h4 id="customizing-the-entire-storage-process">Customizing The Entire Storage Process</h4>
+<p>However, if you would like to take <strong>total</strong> control over the file storage logic of a field, you may use the <code>store</code> method. The <code>store</code> method accepts a callable which receives the incoming HTTP request and the model instance associated with the request:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Http\Request;</span>
+
+<span class="x">File::make(&#39;Attachment&#39;)</span>
+<span class="x">    -&gt;store(function (Request $request, $model) {</span>
+<span class="x">        return [</span>
+<span class="x">            &#39;attachment&#39; =&gt; $request-&gt;attachment-&gt;store(&#39;/&#39;, &#39;s3&#39;),</span>
+<span class="x">            &#39;attachment_name&#39; =&gt; $request-&gt;attachment-&gt;getClientOriginalName(),</span>
+<span class="x">            &#39;attachment_size&#39; =&gt; $request-&gt;attachment-&gt;getSize(),</span>
+<span class="x">        ];</span>
+<span class="x">    }),</span>
+</code></pre></div>
+<p>As you can see in the example above, the <code>store</code> callback is returning an array of keys and values. These key / value pairs are mapped onto your model instance before it is saved to the database, allowing you to update one or many of the model's database columns after your file is stored.</p>
+<p>Here's another example of customizing the storage process. In this example, we're using the <code>store</code> method to store the original file in public storage, create thumbnails using Laravel's queue system, and finally populating values in the resource's <code>media</code> relationship:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Http\Request;</span>
+
+<span class="x">File::make(&#39;Attachment&#39;)</span>
+<span class="x">    -&gt;store(function (Request $request, $model) {</span>
+<span class="x">        return function () use ($resource, $request) {</span>
+<span class="x">            $media = $resource-&gt;media()-&gt;updateOrCreate([], [</span>
+<span class="x">                &#39;path&#39;=&gt; $request-&gt;file(&#39;attachment&#39;)-&gt;store(&#39;/path&#39;, &#39;public&#39;)</span>
+<span class="x">            ]);</span>
+
+<span class="x">            OptimizeMedia::dispatch($media);</span>
+<span class="x">        };</span>
+<span class="x">    }),</span>
+</code></pre></div>
+<h4 id="invokables">Invokables</h4>
+<p>Of course, performing all of your file storage logic within a Closure can cause your resource to become bloated. For that reason, Nova allows you to pass an "invokable" object to the <code>store</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">File::make(&#39;Attachment&#39;)-&gt;store(new StoreAttachment),</span>
+</code></pre></div>
+<p>The invokable object should be a simple PHP class with a single <code>__invoke</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Nova</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">StoreAttachment</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Store the incoming file upload.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param  \Illuminate\Http\Request  $request</span>
+<span class="sd">     * @param  \Illuminate\Database\Eloquent\Model  $model</span>
+<span class="sd">     * @param  string  $attribute</span>
+<span class="sd">     * @param  string  $requestAttribute</span>
+<span class="sd">     * @param  string  $disk</span>
+<span class="sd">     * @param  string  $storagePath</span>
+<span class="sd">     * @return array</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$model</span><span class="p">,</span> <span class="nv">$attribute</span><span class="p">,</span> <span class="nv">$requestAttribute</span><span class="p">,</span> <span class="nv">$disk</span><span class="p">,</span> <span class="nv">$storagePath</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">&#39;attachment&#39;</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">attachment</span><span class="o">-&gt;</span><span class="na">store</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;s3&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;attachment_name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">attachment</span><span class="o">-&gt;</span><span class="na">getClientOriginalName</span><span class="p">(),</span>
+            <span class="s1">&#39;attachment_size&#39;</span> <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">attachment</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">(),</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="customizing-file-deletion">Customizing File Deletion</h3>
+<p>When a file is deleted from the Nova administration panel, Nova will automatically remove the underlying file from storage and insert <code>NULL</code> into the field's associated column.</p>
+<p>If you would like to override this behavior and provide your own file deletion implementation, you may use the <code>delete</code> method. Like the <code>store</code> method discussed above, the <code>delete</code> method accepts a callable which receives the incoming HTTP request and the model instance associated with the request:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Illuminate\Http\Request;</span>
+<span class="x">use Illuminate\Support\Facades\Storage;</span>
+
+<span class="x">File::make(&#39;Attachment&#39;)</span>
+<span class="x">    -&gt;disk(&#39;s3&#39;)</span>
+<span class="x">    -&gt;delete(function (Request $request, $model, $disk, $path) {</span>
+<span class="x">        if (! $path) {</span>
+<span class="x">            return;</span>
+<span class="x">        }</span>
+
+<span class="x">        Storage::disk($disk)-&gt;delete($path);</span>
+
+<span class="x">        return [</span>
+<span class="x">            &#39;attachment&#39; =&gt; null,</span>
+<span class="x">            &#39;attachment_name&#39; =&gt; null,</span>
+<span class="x">            &#39;attachment_size&#39; =&gt; null,</span>
+<span class="x">        ];</span>
+<span class="x">    }),</span>
+</code></pre></div>
+<p>As you can see in the example above, the <code>delete</code> callback is returning an array of keys and values. These key / value pairs are mapped onto your model instance before it is saved to the database, allowing you to update one or many of the model's database columns after your file is stored. Typically, when deleting a field, you will insert <code>NULL</code> into the relevant database columns.</p>
+<h4 id="invokables_1">Invokables</h4>
+<p>Of course, performing all of your file deletion logic within a Closure can cause your resource to become bloated. For that reason, Nova allows you to pass an "invokable" object to the <code>delete</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">File::make(&#39;Attachment&#39;)-&gt;delete(new DeleteAttachment);</span>
+</code></pre></div>
+<p>The invokable object should be a simple PHP class with a single <code>__invoke</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Nova</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Storage</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">DeleteAttachment</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Delete the field&#39;s underlying file.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param  \Illuminate\Http\Request  $request</span>
+<span class="sd">     * @param  \Illuminate\Database\Eloquent\Model  $model</span>
+<span class="sd">     * @param  string|null  $disk</span>
+<span class="sd">     * @param  string|null  $path</span>
+<span class="sd">     * @return array</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="fm">__invoke</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nv">$model</span><span class="p">,</span> <span class="nv">$disk</span><span class="p">,</span> <span class="nv">$path</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$path</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nx">Storage</span><span class="o">::</span><span class="na">disk</span><span class="p">(</span><span class="nv">$disk</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="nv">$path</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="s1">&#39;attachment&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+            <span class="s1">&#39;attachment_name&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+            <span class="s1">&#39;attachment_size&#39;</span> <span class="o">=&gt;</span> <span class="k">null</span><span class="p">,</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="customizing-previews">Customizing Previews</h3>
+<p>By default, Nova will use the <code>Storage::url</code> method to determine the URL that should be used to display image previews on the resource detail page and edit form. However, you may customize the generation of this URL using the <code>preview</code> method.</p>
+<p>The <code>preview</code> method accepts a callable which should return the preview URL. The field's underlying column value is passed to the callable as the first parameter, while the name of the field's storage disk is passed as the second parameter:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Laravel\Nova\Fields\Image;</span>
+<span class="x">use Illuminate\Support\Facades\Storage;</span>
+
+<span class="x">Image::make(&#39;Profile Photo&#39;)</span>
+<span class="x">    -&gt;disk(&#39;public&#39;)</span>
+<span class="x">    -&gt;preview(function ($value, $disk) {</span>
+<span class="x">        return $value</span>
+<span class="x">                    ? Storage::disk($disk)-&gt;url($value)</span>
+<span class="x">                    : null;</span>
+<span class="x">    }),</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Preview Size</p>
+<p>By default, the Nova resource detail page will display previews at a width of 318 pixels (636 pixels for "retina displays").</p>
+</div>
+<h3 id="customizing-thumbnails">Customizing Thumbnails</h3>
+<p>By default, Nova will use the <code>Storage::url</code> method to determine the URL that should be used to display thumbnail previews on the resource index page and within search results (when using the <code>Avatar</code> field). However, you may customize the generation of this URL using the <code>thumbnail</code> method.</p>
+<p>The <code>thumbnail</code> method accepts a callable which should return the thumbnail URL. The field's underlying column value is passed to the callable as the first parameter, while the name of the field's storage disk is passed as the second parameter:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Laravel\Nova\Fields\Image;</span>
+<span class="x">use Illuminate\Support\Facades\Storage;</span>
+
+<span class="x">Image::make(&#39;Profile Photo&#39;)</span>
+<span class="x">    -&gt;disk(&#39;public&#39;)</span>
+<span class="x">    -&gt;thumbnail(function ($value, $disk) {</span>
+<span class="x">        return $value</span>
+<span class="x">                    ? Storage::disk($disk)-&gt;url($value)</span>
+<span class="x">                    : null;</span>
+<span class="x">    }),</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Thumbnail Size</p>
+<p>By default, Nova will display thumbnails at a width of 32 pixels (64 pixels for "retina displays").</p>
+</div>
+<h3 id="customizing-downloads">Customizing Downloads</h3>
+<p>By default, Nova will use the <code>Storage::download</code> method to determine the file and filename that should be used for downloading the file. However, you may customize the generation of this URL using the <code>download</code> method. The <code>download</code> method accepts a callable which should return the result of your own call to the  <code>Storage::download</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">use Laravel\Nova\Fields\Image;</span>
+<span class="x">use Illuminate\Support\Facades\Storage;</span>
+
+<span class="x">Image::make(&#39;Profile Photo&#39;)</span>
+<span class="x">    -&gt;disk(&#39;public&#39;)</span>
+<span class="x">    -&gt;download(function ($request, $model, $disk, $value) {</span>
+<span class="x">        return Storage::disk($disk)-&gt;download($value, &#39;avatar&#39;);</span>
+<span class="x">    }),</span>
+</code></pre></div>
+<h3 id="customizing-accepted-file-types">Customizing Accepted File Types</h3>
+<p>By default, the <code>File</code> field will allow any files to be selected and uploaded; however, you may customize the accepted file types using the <code>acceptedTypes</code> method:</p>
+<div class="highlight"><pre><span></span><code><span class="x">File::make(&#39;Disk Image&#39;)-&gt;acceptedTypes(&#39;.dmg,.exe&#39;)</span>
+</code></pre></div>
+<p>When using the <code>acceptedTypes</code> method, Nova adds the <code>accepts</code> attribute to the file input element; therefore, all of the following media types are valid:</p>
+<ul>
+<li><code>.dmg</code></li>
+<li><code>.dmg,.exe,.deb</code></li>
+<li><code>image/*</code></li>
+<li><code>audio/*</code></li>
+<li><code>video/*</code></li>
+<li>All media types listed at http://www.iana.org/assignments/media-types/</li>
+</ul>
+<p>Since the <code>acceptedTypes</code> method only performs client-side validation, you should also validate the file type using server-side validation rules.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
