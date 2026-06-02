@@ -1,5 +1,5 @@
 ```
-pip3 install mkdocs --break-system-packages
+pip3 install mkdocs --break-system-packages   # Or do it in the venv
 
 uv pip install -r requirements.txt
 
